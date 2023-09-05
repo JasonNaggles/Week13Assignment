@@ -23,7 +23,7 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
-        <h2>Login</h2>
+        <h3>Log In</h3>
         <form onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
