@@ -1,10 +1,11 @@
 nav {
-    background-color: blue;
+    display: flex;
     color: #fff;
     height: 100vh;
   }
   
-nav ul {
+ul {
+    background-color: blue;
     list-style: none;
     padding: 0;
     display: flex;
