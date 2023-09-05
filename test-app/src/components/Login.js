@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import './LoginForm.css';
 
-export class LoginForm extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       password: '',
+      error: '',
+      isAuthenticated: false,
     };
   }
 
@@ -19,20 +20,14 @@ export class LoginForm extends Component {
     event.preventDefault();
     const { username, password } = this.state;
 
-    // Add your login logic here, e.g., sending a request to an API
-    console.log('Username:', username);
-    console.log('Password:', password);
-
-    // Reset the form
-    this.setState({ username: '', password: '' });
   };
 
   render() {
     return (
-      <div className="login-form">
-        <h3 className="login-header">Log In</h3>
+      <div className="login">
+        <h2>Login</h2>
         <form onSubmit={this.handleSubmit}>
-          <div>
+          <div className="form-group">
             <label htmlFor="username">Username:</label>
             <input
               type="text"
@@ -43,7 +38,7 @@ export class LoginForm extends Component {
               required
             />
           </div>
-          <div>
+          <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
               type="password"
@@ -54,15 +49,11 @@ export class LoginForm extends Component {
               required
             />
           </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
+          <button type="submit">Submit</button>
         </form>
       </div>
     );
   }
 }
 
-export default LoginForm;
-
-  
+export default Login;
